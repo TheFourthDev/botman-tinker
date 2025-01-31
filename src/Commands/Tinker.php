@@ -7,7 +7,7 @@ use BotMan\BotMan\Cache\ArrayCache;
 use BotMan\Tinker\Drivers\ConsoleDriver;
 use Clue\React\Stdio\Stdio;
 use Illuminate\Console\Command;
-use React\EventLoop\Factory;
+use React\EventLoop\Loop;
 
 class Tinker extends Command
 {
@@ -28,13 +28,13 @@ class Tinker extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         /** @var \Illuminate\Foundation\Application $app */
         $app = app('app');
-        $loop = Factory::create();
+        $loop = Loop::get();
 
         $app->singleton('botman', function ($app) use ($loop) {
             $config = config('services.botman', []);
