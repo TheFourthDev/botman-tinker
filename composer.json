@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.3|^8.4",
+        "php": "^8.4",
         "botman/botman": "~2.8",
         "clue/stdio-react": "^2.0",
         "illuminate/support": "^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
